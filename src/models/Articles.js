@@ -27,6 +27,5 @@ export default function Articles() {
         <div>{body.summary}</div>
       </>
       
-
     );
   }
