@@ -2,12 +2,18 @@ import React from 'react';
 import {
   useQuery,
 } from "@apollo/client";
-import ARTICLES from '../querys/querys';
+import ARTICLES from '../services/querys/article';
 
 
 export default function Articles() {
 
     const { loading, error, data } = useQuery(ARTICLES);
+
+    console.log(loading);
+    console.log(error);
+    console.log(data);
+
+   
 
     const { nodeById } = data;
 

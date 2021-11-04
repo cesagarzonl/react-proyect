@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Articles from './models/Articles';
+import Articles from './pages/Article';
 
 function App() {
   return (
