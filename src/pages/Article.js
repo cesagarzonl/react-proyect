@@ -11,20 +11,11 @@ export default function Articles() {
 
     const { loading, error, data } = useQuery(ARTICLES);
 
-    console.log(loading);
-    console.log(error);
-    console.log(data);
-
-    const { nodeById } = data;
-
-    const { body, fieldImage, title} = nodeById;
-  
-    console.log('data',nodeById);
-    console.log('loading',loading);
-    console.log('error',error);
-
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
+
+    const { nodeById } = data;
+    const { body, fieldImage, title} = nodeById;
 
     return(
       <>
