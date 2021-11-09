@@ -1,4 +1,4 @@
-import { FieldImageInterface } from "./fieldImageInterface";
+import { FieldImageInterface } from "./FieldImageInterface";
 export class Path {
   alias: string;
   constructor(alias: string){
