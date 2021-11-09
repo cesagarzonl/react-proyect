@@ -2,9 +2,9 @@ import {
   gql
 } from "@apollo/client";
 
-const ARTICLES = gql`
+const ARTICLES = (nid) =>  gql`
   query {
-    nodeById(id: "156568") {
+    nodeById(id: "${nid}") {
       ... on NodeArticle {
         nid
         path {

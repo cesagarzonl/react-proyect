@@ -1,28 +1,17 @@
 import React from 'react';
-import {
-  useQuery,
-} from "@apollo/client";
-import ARTICLES from '../services/querys/article';
+
+
+import {GetArticle} from '../services/ArticleService';
 
 
 export default function Articles() {
 
-    console.log(ARTICLES);
+  var articulo = GetArticle(156584)
 
-    const { loading, error, data } = useQuery(ARTICLES);
+  return <div>
+    <h1>{articulo.title}</h1>
+    <img src={articulo.fieldImage.entity.thumbnail.url} ></img>
+    
+  </div>;
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
-
-    const { nodeById } = data;
-    const { body, fieldImage, title} = nodeById;
-
-    return(
-      <>
-        <h1>{title}</h1>
-        <img src = {fieldImage.entity.thumbnail.url}></img>
-        <div>{body.summary}</div>
-      </>
-      
-    );
-  }
+}
