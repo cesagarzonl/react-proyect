@@ -11,8 +11,8 @@ export default function Sections() {
       return <div>
           <ul>
           {section.map((sec,index)=>
-            <li key={index}>
-                {sec.path.alias}
+            <li key={sec.tid}>
+                {sec.path.alias} {sec.tid}
            </li>)}
           </ul>
           </div>; 
