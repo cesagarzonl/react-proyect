@@ -6,7 +6,11 @@ import { useRouter } from 'next/router'
 import client from "../../client"
 import SECTION from '../../querys/sections'
 
+
+
 export async function getStaticProps({ params }) {
+  const router = useRouter()
+  const { pid } = router.query
 
   const { data } = await client.query({
     query: SECTION,variables:{nid:1}
