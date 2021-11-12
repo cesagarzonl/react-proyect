@@ -1,14 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
+
 import Link from 'next/link'
 
 import client from "../../client"
 import SECTION from '../../querys/sections'
+import { TaxonomyTermByID } from '../../models/taxonomyTermById'
 
 export async function getStaticProps() {
+  let nid = 1
   const { data } = await client.query({
-    query: SECTION,variables:{nid:1}
+    query: SECTION,variables:{nid}
   });
 
   return {

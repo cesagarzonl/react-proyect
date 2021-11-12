@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const SECTION = gql`
-query {
-taxonomyTermById (id: "1") {
+query ($nid:String!){
+taxonomyTermById (id: $nid) {
     ... on TaxonomyTermSection {tid
     path {
         alias
@@ -16,7 +16,7 @@ nodeQuery (filter: {
     conditions: [{
         field: "field_section",
         operator: EQUAL,
-        value: "1"
+        value:  [$nid]
     },
     {
         field: "type",

@@ -6,23 +6,26 @@ import { useRouter } from 'next/router'
 import client from "../../client"
 import SECTION from '../../querys/sections'
 
-export async function getStaticProps({ params }) {
+
+
+export async function getStaticProps({params}) {
 
   const { data } = await client.query({
-    query: SECTION,variables:{nid:1}
+    query: SECTION,variables:{nid:params.id}
   });
-  console.log('params',params)
   return {
     props: {
       section: data.taxonomyTermById,
-      Articlesections:data.nodeQuery.entities
+      Articlesections:data.nodeQuery.entities,
+      params
     },
  };
 }
 
 
 
-export default function sections({section,Articlesections}) {
+export default function sections({section,Articlesections,params}) {
+  console.log(params)
     if (section){
         return(
             <div>

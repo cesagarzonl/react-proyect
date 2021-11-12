@@ -30,16 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/article": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/article.js"
-    ],
-    "/sections": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/sections.js"
-    ],
     "/sections/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
