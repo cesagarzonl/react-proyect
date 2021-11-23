@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 
-import client from "../../client"
+import client from "../../hooks/client"
 import ARTICLES from '../../querys/article'
 
 export async function getStaticProps() {
